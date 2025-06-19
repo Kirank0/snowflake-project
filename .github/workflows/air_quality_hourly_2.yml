@@ -1,7 +1,7 @@
 name: india_air_quality_json
 
 on:
-  workflow_dispatch:  
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -10,14 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python and install dependencies
+      - name: Set up Python
         run: |
-          echo "Current directory: $(pwd)"
-          echo "Installing pip and dependencies..."
           pip install --upgrade pip
           pip install "snowflake-snowpark-python[pandas]"
 
       - name: Run ingestion script
-        run: |
-          echo "Running ingestion script..."
-          python ingest-api-data.py
+        run: python ingest-api-data.py
