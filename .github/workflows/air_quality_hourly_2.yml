@@ -7,7 +7,8 @@ name: india_air_quality_json
 #   workflow_dispatch:
 on:
   schedule:
-     - cron: '45 * * * *'  # Runs every 45th min
+    - cron: '45 * * * *'  # Every 45th minute of the hour (UTC)
+  workflow_dispatch:  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
